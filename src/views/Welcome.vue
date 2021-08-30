@@ -3,11 +3,11 @@
       <p>welcome</p>
       <div v-if="showLogin">
         <SignupForm />
-                <p> Already registered? <span @click='showLogin = false'>Sign up</span></p>
+                <p> Already registered? <span @click='showLogin = false'>Sign in</span></p>
       </div>
       <div v-else>
         <LoginForm />
-        <p>No account yet? <span @click='showLogin = true'>Sign in</span></p>
+        <p>No account yet? <span @click='showLogin = true'>Sign up</span></p>
       </div>
  </div>
 </template>
