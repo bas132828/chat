@@ -14,6 +14,7 @@ import { ref } from "@vue/reactivity";
 import getUser from "../composables/getUser";
 import useCollection from "../composables/useCollection";
 import { timestamp } from "../firebase/config";
+import arr from "../composables/getWord";
 
 export default {
   setup() {
@@ -22,10 +23,47 @@ export default {
     const { addDoc, error } = useCollection("messages");
 
     const handleSubmit = async () => {
+      function getRandomArbitrary() {
+        const num = Math.trunc(Math.random() * arr.length);
+        return arr[num];
+      }
+
+      let finalMessage = "";
       if (message.value === "") return;
+      finalMessage = message.value;
+
+      if (message.value.includes(",")) {
+        const temp = finalMessage.split(",").map((el, i, array) => {
+          if (i < array.length - 1) return `${el}, ${getRandomArbitrary()},`;
+          else return el;
+        });
+        finalMessage = temp.join(" ");
+      }
+
+      if (message.value.includes("!")) {
+        const temp = finalMessage.split("!").map((el, i, array) => {
+          if (i < array.length - 1) return `${el}, ${getRandomArbitrary()}!`;
+          else return el;
+        });
+        finalMessage = temp.join(" ");
+      }
+      if (message.value.includes("?")) {
+        finalMessage = `${finalMessage.replaceAll(
+          "?",
+          ""
+        )}, ${getRandomArbitrary()}?`;
+      }
+      if (message.value.includes(".")) {
+        const temp = finalMessage.split(".").map((el, i, array) => {
+          if (i < array.length - 1) return `${el}, ${getRandomArbitrary()}.`;
+          else return el;
+        });
+        finalMessage = temp.join(" ");
+      }
+      ///
       const chat = {
         name: user.value.displayName,
-        message: message.value,
+        message: finalMessage,
         createdAt: timestamp(),
       };
 
