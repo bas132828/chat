@@ -15,6 +15,8 @@ export default {
         const { user } = getUser()
 
         const handleSubmit = async () => {
+
+            if(message.value === '') return 
             const chat = {
                 name: user.value.displayName,
                 message: message.value,
@@ -31,6 +33,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+    
+    form {
+    margin: 10px;
+    }
+    textarea {
+        width: 100%;
+        max-width:100%;
+        margin-bottom: 6px;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 0;
+        border-radius: 20px;
+        font-family: inherit;
+        outline: none;
+    }
 
 </style>
