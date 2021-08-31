@@ -9,7 +9,7 @@ const getCollection = (collection) => {
 
   // register the firestore collection reference
   console.log(collection)
-  let collectionRef = projectFirestore.collection(collection)    
+  let collectionRef = projectFirestore.collection(collection).orderBy('createdAt')    
 
   collectionRef.onSnapshot(snap => {
     let results = [];
@@ -17,7 +17,7 @@ const getCollection = (collection) => {
     snap.docs.forEach(doc => {
       // must wait for the server to create the timestamp & send it back
       // we don't want to edit data until it has done this
-      results.push({...doc.data(), id: doc.id})
+     doc.data().createdAt && results.push({...doc.data(), id: doc.id})
     });
     
     // update values
