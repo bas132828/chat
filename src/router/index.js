@@ -3,37 +3,36 @@ import Welcome from "../views/Welcome.vue";
 import Chatroom from "../views/Chatroom.vue";
 import { projectAuth } from "../firebase/config";
 
-const requireAuth = ( to, from, next) => {
-  let user = projectAuth.currentUser
-  if(!user){
-    next({ name: "Welcome" })
+const requireAuth = (to, from, next) => {
+  let user = projectAuth.currentUser;
+  if (!user) {
+    next({ name: "Welcome" });
   } else {
-    next()    
+    next();
   }
-}
+};
 
-const requireNoAuth = ( to, from, next) => {
-  let user = projectAuth.currentUser
-  if(user){
-    next({ name: "Chatroom" })
+const requireNoAuth = (to, from, next) => {
+  let user = projectAuth.currentUser;
+  if (user) {
+    next({ name: "Chatroom" });
   } else {
-    next()    
+    next();
   }
-}
-
+};
 
 const routes = [
   {
     path: "/",
     name: "Welcome",
     component: Welcome,
-    beforeEnter: requireNoAuth
+    beforeEnter: requireNoAuth,
   },
   {
     path: "/chatroom",
     name: "Chatroom",
     component: Chatroom,
-    beforeEnter: requireAuth
+    beforeEnter: requireAuth,
   },
 ];
 
