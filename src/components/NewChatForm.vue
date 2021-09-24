@@ -8,7 +8,12 @@
       @keypress.enter.prevent="handleSubmit"
       placeholder="Type your message and hit enter here"
       v-model="message"
-    ></textarea>
+    >
+    </textarea>
+    <button class="sendButton" type="submit" @click.prevent="handleSubmit">
+      Send
+    </button>
+
     <div class="error">{{ error }}</div>
   </form>
 </template>
@@ -95,7 +100,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.sendButton {
+  position: absolute;
+  right: 0;
+}
 form {
+  position: relative;
   margin: 10px;
 }
 textarea {
