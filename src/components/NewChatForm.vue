@@ -151,5 +151,6 @@ textarea {
   outline: none;
   font-size: 1.3rem;
   position: relative;
+  margin-right: 0.5rem;
 }
 </style>
