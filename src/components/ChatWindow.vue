@@ -45,23 +45,23 @@ export default {
 <style scoped>
 .chat-window {
   background: #fafafa;
-  padding: 30px 20px;
+  padding: 3rem 2rem;
 }
 .single {
-  margin: 18px 0;
+  margin: 1.8rem 0;
 }
 .created-at {
   display: block;
   color: #999;
-  font-size: 12px;
-  margin-bottom: 4px;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
 }
 .name {
   font-weight: bold;
-  margin-right: 6px;
+  margin-right: 0.6rem;
 }
 .messages {
-  max-height: 400px;
+  max-height: 40rem;
   overflow: auto;
 }
 </style>

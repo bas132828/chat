@@ -1,19 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+/* @media screen and (max-height: 600px) {
+  html {
+    font-size: 90%;
+  }
+} */
 body {
   background: #e3e1ff;
   color: #444;
 }
 .container {
   width: 90%;
-  max-width: 960px;
-  min-width: 320px;
-  margin: 80px auto;
-  border-radius: 20px;
+  max-width: 96rem;
+  min-width: 32rem;
+  margin: 8rem auto;
+  border-radius: 2rem;
   box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
   background: white;
+  font-size: 1.7rem;
 }
 .error {
   color: #ff3f80;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 button {
   text-decoration: none;
@@ -21,6 +37,6 @@ button {
   color: white;
   font-weight: bold;
   border: 0;
-  border-radius: 20px;
-  padding: 10px 20px;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
 }

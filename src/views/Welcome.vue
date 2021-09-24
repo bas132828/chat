@@ -38,25 +38,26 @@ export default {
 <style>
 .welcome {
   text-align: center;
-  padding: 20px 0;
+  padding: 2rem 0;
 }
 /* form styles */
 .welcome form {
-  width: 300px;
-  margin: 20px auto;
+  width: 30rem;
+  margin: 2rem auto;
 }
 .welcome label {
   display: block;
-  margin: 20px 0 10px;
+  margin: 2rem 0 10px;
 }
+
 .welcome input {
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   border-radius: 20px;
   border: 1px solid #eee;
   outline: none;
   color: #999;
-  margin: 10px auto;
+  margin: 1rem auto;
 }
 .welcome span {
   font-weight: bold;
@@ -64,6 +65,6 @@ export default {
   cursor: pointer;
 }
 .welcome button {
-  margin: 20px auto;
+  margin: 2rem auto;
 }
 </style>

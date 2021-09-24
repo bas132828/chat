@@ -32,7 +32,7 @@ export default {
 
 <style>
 nav {
-  padding: 20px;
+  padding: 2rem;
   border-bottom: 1px solid #eee;
   display: flex;
   justify-content: space-between;
@@ -40,11 +40,9 @@ nav {
 }
 nav p {
   margin: 2px auto;
-  font-size: 16px;
   color: #444;
 }
 nav p.email {
-  font-size: 14px;
   color: #999;
 }
 </style>

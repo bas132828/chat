@@ -1,19 +1,38 @@
 <template>
   <form>
-    <input type="radio" id="regular" value="regular" v-model="mode" />
-    <input type="radio" id="hard" value="hard" v-model="mode" />
-    <input type="radio" id="soft" value="soft" v-model="mode" />
+    <input
+      class="radioButtons"
+      type="radio"
+      id="regular"
+      value="regular"
+      v-model="mode"
+    />
+    <input
+      class="radioButtons"
+      type="radio"
+      id="hard"
+      value="hard"
+      v-model="mode"
+    />
+    <input
+      class="radioButtons"
+      type="radio"
+      id="soft"
+      value="soft"
+      v-model="mode"
+    />
     <span> {{ mode }} mode</span>
-    <textarea
-      @keypress.enter.prevent="handleSubmit"
-      placeholder="Type your message and hit enter here"
-      v-model="message"
-    >
-    </textarea>
-    <button class="sendButton" type="submit" @click.prevent="handleSubmit">
-      Send
-    </button>
-
+    <div class="input-container">
+      <textarea
+        @keypress.enter.prevent="handleSubmit"
+        placeholder="Type your message and hit enter here"
+        v-model="message"
+      >
+      </textarea>
+      <button class="sendButton" type="submit" @click.prevent="handleSubmit">
+        Send
+      </button>
+    </div>
     <div class="error">{{ error }}</div>
   </form>
 </template>
@@ -100,23 +119,37 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.radioButtons {
+  margin: 0 0.5rem;
+}
 .sendButton {
-  position: absolute;
+  position: relative;
   right: 0;
 }
 form {
   position: relative;
-  margin: 10px;
+  margin: 1rem;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 textarea {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 6px;
-  padding: 10px;
+  // width: 80%;
+  // max-width: 100%;
+  resize: none;
+  flex-basis: 90%;
+  margin-bottom: 0.6rem;
+  padding: 1rem;
   box-sizing: border-box;
   border: 0;
-  border-radius: 20px;
+  border-radius: 2rem;
   font-family: inherit;
   outline: none;
+  font-size: 1.3rem;
+  position: relative;
 }
 </style>
