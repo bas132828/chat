@@ -47,6 +47,7 @@ export default {
   background: #fafafa;
   padding: 3rem 2rem;
   flex-basis: 75%;
+  position: relative;
 }
 .single {
   margin: 1.8rem 0;
@@ -62,7 +63,7 @@ export default {
   margin-right: 0.6rem;
 }
 .messages {
-  max-height: 40rem;
+  max-height: 50rem;
   overflow: auto;
 }
 </style>
