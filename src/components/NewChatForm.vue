@@ -125,13 +125,17 @@ export default {
 .sendButton {
   position: relative;
   right: 0;
+  margin-right: 2.5rem;
 }
 form {
-  position: relative;
+  // position: fixed;
   margin: 1rem;
+  bottom: 0;
+  width: 100%;
 }
 
 .input-container {
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -140,8 +144,9 @@ form {
 textarea {
   // width: 80%;
   // max-width: 100%;
+  height: 100%;
   resize: none;
-  flex-basis: 90%;
+  flex-basis: 80%;
   margin-bottom: 0.6rem;
   padding: 1rem;
   box-sizing: border-box;
